@@ -53,7 +53,7 @@ custom-width">delete</a></td>
 		<div class="well">
 			<ul>
 			
-			<li><a href="<c:url value='/newuser' />">add user</a>      </li>
+			<li><a href="<c:url value='/newuser' />">Add User</a></li>
 			
 			
 			</ul>
