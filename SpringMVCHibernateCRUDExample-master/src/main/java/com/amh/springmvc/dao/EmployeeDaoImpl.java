@@ -32,6 +32,7 @@ public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements E
 	@Override
 	public void save(Employee employee) {
 		// TODO Auto-generated method stub
+		persist(employee);
 		
 	}
 

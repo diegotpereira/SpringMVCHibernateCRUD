@@ -24,19 +24,20 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public Employee findBySSO(String sso) {
+	public Employee findBySSO(String ssn) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void saveEmployee(Employee user) {
+	public void saveEmployee(Employee employee) {
 		// TODO Auto-generated method stub
+		dao.save(employee);
 		
 	}
 
 	@Override
-	public void deleteEmployeeBySSO(String sso) {
+	public void deleteEmployeeBySSO(String ssn) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -48,9 +49,15 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public boolean isEmployeeSSOUnique(Integer id, String sso) {
+	public boolean isEmployeeSSOUnique(Integer id, String ssn) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void updateEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

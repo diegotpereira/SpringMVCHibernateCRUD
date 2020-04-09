@@ -9,16 +9,16 @@ public interface EmployeeService {
 	
 	Employee findById(int id);
 
-	Employee findBySSO(String sso);
+	Employee findBySSO(String ssn);
 
 	void saveEmployee(Employee user);
 
-//	void updateEmployee(Employee);
+	void updateEmployee(Employee employee);
 
-	void deleteEmployeeBySSO(String sso);
+	void deleteEmployeeBySSO(String ssn);
 
 	List<Employee> findAllEmployees();
 
-	boolean isEmployeeSSOUnique(Integer id, String sso);
+	boolean isEmployeeSSOUnique(Integer id, String ssn);
 
 }
