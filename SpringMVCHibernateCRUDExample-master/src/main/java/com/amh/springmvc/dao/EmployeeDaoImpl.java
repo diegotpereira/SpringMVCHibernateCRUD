@@ -41,9 +41,9 @@ public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements E
 		
 	}
 
-	@Override
+	@SuppressWarnings("unchecked")
 	public List<Employee> findAllEmployees() {
-		Criteria criteria = createEntityCriteria().addOrder(Order.asc("Name"));
+		Criteria criteria = createEntityCriteria().addOrder(Order.asc("name"));
 		criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);// To avoid
 																		// duplicates.
 		List<Employee> employees = (List<Employee>) criteria.list();

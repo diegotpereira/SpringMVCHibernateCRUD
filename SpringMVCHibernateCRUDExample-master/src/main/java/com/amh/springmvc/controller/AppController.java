@@ -33,7 +33,7 @@ public class AppController {
 	@Autowired
 	UserService userService;
 	
-//	@Autowired
+	@Autowired
 	EmployeeService employeeService;
 
 	@Autowired
@@ -175,8 +175,8 @@ public class AppController {
 	@RequestMapping(value = { "/employeeslist" }, method = RequestMethod.GET)
 	public String listEmployees(ModelMap model) {
 
-//		List<Employee> employees = employeeService.findAllEmployees();
-//		model.addAttribute("employees", employees);
+		List<Employee> employees = employeeService.findAllEmployees();
+		model.addAttribute("employees", employees);
 		return "employeeslist";
 	}
 }
