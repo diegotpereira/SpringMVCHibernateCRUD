@@ -3,10 +3,10 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.amh.springmvc</groupId>
-	<artifactId>SpringMVCHibernateManyToManyCRUDExample</artifactId>
+	<artifactId>SpringMVCHibernateCRUD</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringMVCHibernateManyToManyCRUDExample Maven Webapp</name>
+	<name>SpringMVCHibernateCRUD Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -102,12 +102,12 @@
 					<version>2.4</version>
 					<configuration>
 						<warSourceDirectory>src/main/webapp</warSourceDirectory>
-						<warName>SpringMVCHibernateManyToManyCRUDExample</warName>
+						<warName>SpringMVCHibernateCRUD</warName>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
 					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		<finalName>SpringMVCHibernateManyToManyCRUDExample</finalName>
+		<finalName>SpringMVCHibernateCRUD</finalName>
 	</build>
 </project>
