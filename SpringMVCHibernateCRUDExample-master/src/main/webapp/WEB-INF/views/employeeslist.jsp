@@ -25,7 +25,7 @@
 						<th>name</th>
 						<th>Joining Date</th>
 						<th>Salary</th>
-						<th>SSN</th>
+<!-- 						<th>SSN</th> -->
 						<th width="100"></th>
 						<th width="100"></th>
 					</tr>
@@ -33,15 +33,15 @@
 				<tbody>
 					<c:forEach items="${employees}" var="employee">
 						<tr>
-							<td>${employee.Name}</td>
+							<td>${employee.name}</td>
 							<td>${employee.joining_date}</td>
 							<td>${employee.salary}</td>
-							<td>${employee.ssn}</td>
-							<td><a href="<c:url value='/edit-employee-${employee.Id}' />"
+<%-- 							<td>${employee.ssn}</td> --%>
+							<td><a href="<c:url value='/edit-employee-${employee.id}' />"
 								class="btn btn-success 
  
 custom-width">edit</a></td>
-							<td><a href="<c:url value='/delete-employee-${employee.Id}' />"
+							<td><a href="<c:url value='/delete-employee-${employee.id}' />"
 								class="btn btn-danger 
  
 custom-width">delete</a></td>
