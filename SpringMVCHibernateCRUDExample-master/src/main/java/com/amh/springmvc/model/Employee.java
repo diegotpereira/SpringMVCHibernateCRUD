@@ -1,6 +1,11 @@
 package com.amh.springmvc.model;
 
-import java.util.Date;
+
+
+
+
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,11 +28,11 @@ public class Employee {
 	@Column(name = "NAME", unique = true, nullable = false)
 	private String name;
 	
-	@NotEmpty
+//	@NotEmpty
 	@Column(name = "JOINING_DATE", unique = true, nullable = false)
 	private Date joining_date;  
 	
-	@NotEmpty
+//	@NotEmpty
 	@Column(name = "SALARY", unique = true, nullable = false)
 	private double salary;  
 	
