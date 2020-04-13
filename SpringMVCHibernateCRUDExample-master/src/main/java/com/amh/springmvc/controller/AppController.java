@@ -179,4 +179,19 @@ public class AppController {
 		model.addAttribute("employees", employees);
 		return "employeeslist";
 	}
+	
+	@RequestMapping(value = { "/addemployee" }, method = RequestMethod.POST)
+	public String saveEmployee(@Valid Employee employee, BindingResult result, ModelMap model) {
+
+		if (result.hasErrors()) {
+			return "registration";
+		}
+
+		employeeService.saveEmployee(employee);
+
+		model.addAttribute("success",
+				"Employee " + employee.getName() + " " + " registered successfully");
+		
+		return "registrationsuccess";
+	}
 }
