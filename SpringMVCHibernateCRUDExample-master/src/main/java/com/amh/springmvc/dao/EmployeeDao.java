@@ -13,7 +13,7 @@ public interface EmployeeDao {
      
     void save(Employee employee);
      
-    void deleteBySSN(String ssn);
+    void deleteEmployeeBySSN(Integer id);
      
     List<Employee> findAllEmployees();
 

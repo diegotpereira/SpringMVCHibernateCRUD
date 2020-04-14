@@ -9,13 +9,13 @@ public interface EmployeeService {
 	
 	Employee findById(int id);
 
-	Employee findBySSO(String ssn);
+	Employee findBySSN(String ssn);
 
-	void saveEmployee(Employee user);
+	void saveEmployee(Employee employee);
 
 	void updateEmployee(Employee employee);
 
-	void deleteEmployeeBySSO(String ssn);
+	void deleteEmployeeBySSN(Integer id);
 
 	List<Employee> findAllEmployees();
 

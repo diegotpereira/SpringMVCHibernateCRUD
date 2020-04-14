@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import com.amh.springmvc.model.Employee;
@@ -18,7 +19,7 @@ public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements E
 	public Employee findById(int id) {
 		Employee employee = getByKey(id);
 		if (employee != null) {
-//			Hibernate.initialize(employee.getEmployeeProfiles());
+			Hibernate.initialize(employee.getId());
 		}
 		return employee;
 	}
@@ -37,8 +38,12 @@ public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements E
 	}
 
 	@Override
-	public void deleteBySSN(String ssn) {
+	public void deleteEmployeeBySSN(Integer id) {
 		// TODO Auto-generated method stub
+		Criteria crit = createEntityCriteria();
+		crit.add(Restrictions.eq("id", id));
+		Employee employee = (Employee) crit.uniqueResult();
+		delete(employee);
 		
 	}
 

@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.amh.springmvc.dao.EmployeeDao;
 
 import com.amh.springmvc.model.Employee;
+import com.amh.springmvc.model.User;
 
 @Service("employeeService")
 @Transactional
@@ -20,11 +21,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Override
 	public Employee findById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.findById(id);
 	}
 
 	@Override
-	public Employee findBySSO(String ssn) {
+	public Employee findBySSN(String ssn) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -37,8 +38,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public void deleteEmployeeBySSO(String ssn) {
+	public void deleteEmployeeBySSN(Integer id) {
 		// TODO Auto-generated method stub
+		dao.deleteEmployeeBySSN(id);
 		
 	}
 
@@ -57,6 +59,14 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Override
 	public void updateEmployee(Employee employee) {
 		// TODO Auto-generated method stub
+		Employee entity = dao.findById(employee.getId());
+		if (entity != null) {
+			entity.setId(employee.getId());
+			entity.setName(employee.getName());
+			entity.setJoining_date(employee.getJoining_date());
+			entity.setSalary(employee.getSalary());
+			entity.setSsn(employee.getSsn());
+		}
 		
 	}
 

@@ -37,7 +37,7 @@ public class Employee {
 	private double salary;  
 	
 	@NotEmpty
-	@Column(name = "SSN", unique = true, nullable = false)
+	@Column(name = "SSN", nullable = false)
 	private String ssn;
 
 	public Integer getId() {
