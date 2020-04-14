@@ -194,4 +194,33 @@ public class AppController {
 		
 		return "registrationsuccess";
 	}
+	
+	@RequestMapping(value = { "/edit-employee-{id}" }, method = RequestMethod.GET)
+	public String editEmployee(@PathVariable Integer id, ModelMap model) {
+		Employee employee = employeeService.findById(id);
+		model.addAttribute("employee", employee);
+		model.addAttribute("edit", true);
+		return "addemployee";
+	}
+
+	/**
+	 * This method will be called on form submission, handling POST request for
+	 * updating user in database. It also validates the user input
+	 */
+
+	
+	@RequestMapping(value = { "/delete-employee-{id}" }, method = RequestMethod.GET)
+	public String deleteEmployee(@PathVariable Integer id) {
+		employeeService.deleteEmployeeBySSN(id);
+		return "redirect:/list";
+	}
+	
+	@RequestMapping(value = { "/edit-employee-{Id}" }, method = RequestMethod.POST)
+	public String updateEmployee(@Valid Employee employee, BindingResult result, ModelMap model,@PathVariable("id") Integer id) {
+
+		if (result.hasErrors()) {
+			return "addemployee";
+		}
+}
+
 }
