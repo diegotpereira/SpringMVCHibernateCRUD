@@ -61,7 +61,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 		// TODO Auto-generated method stub
 		Employee entity = dao.findById(employee.getId());
 		if (entity != null) {
-			entity.setId(employee.getId());
+//			entity.setId(employee.getId());
 			entity.setName(employee.getName());
 			entity.setJoining_date(employee.getJoining_date());
 			entity.setSalary(employee.getSalary());

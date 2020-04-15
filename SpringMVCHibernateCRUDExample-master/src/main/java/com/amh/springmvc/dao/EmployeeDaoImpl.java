@@ -17,11 +17,7 @@ public class EmployeeDaoImpl extends AbstractDao<Integer, Employee> implements E
 
 	@Override
 	public Employee findById(int id) {
-		Employee employee = getByKey(id);
-		if (employee != null) {
-			Hibernate.initialize(employee.getId());
-		}
-		return employee;
+		return getByKey(id);
 	}
 
 	@Override
