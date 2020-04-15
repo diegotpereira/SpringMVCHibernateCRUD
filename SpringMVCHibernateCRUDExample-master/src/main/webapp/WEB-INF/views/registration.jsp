@@ -16,14 +16,13 @@
 <body>
 
 	<div class="generic-container">
-		<div class="well lead">User Registration Form</div>
+		<div class="well lead">Formulário de Registro de Usuário</div>
 		<form:form method="POST" modelAttribute="user" class="form-horizontal">
 			<form:input type="hidden" path="id" id="id" />
 
 			<div class="row">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="firstName">First
-						Name</label>
+					<label class="col-md-3 control-lable" for="firstName">Nome</label>
 					<div class="col-md-7">
 						<form:input type="text" path="firstName" id="firstName"
 							class="form-control input-sm" />
@@ -36,8 +35,7 @@
 
 			<div class="row">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="lastName">Last
-						Name</label>
+					<label class="col-md-3 control-lable" for="lastName">SobreNome</label>
 					<div class="col-md-7">
 						<form:input type="text" path="lastName" id="lastName"
 							class="form-control input-sm" />
@@ -101,7 +99,7 @@ input-sm" />
 
 			<div class="row">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="userProfiles">Roles</label>
+					<label class="col-md-3 control-lable" for="userProfiles">Funções</label>
 					<div class="col-md-7">
 						<form:select path="userProfiles" items="${roles}" multiple="true"
 							itemValue="id" itemLabel="type" class="form-control input-sm" />
@@ -118,12 +116,12 @@ input-sm" />
 						<c:when test="${edit}">
 							<input type="submit" value="Update"
 								class="btn btn-primary btn-sm" /> or <a
-								href="<c:url value='/list' />">Cancel</a>
+								href="<c:url value='/list' />">Cancelar</a>
 						</c:when>
 						<c:otherwise>
 							<input type="submit" value="Register"
 								class="btn btn-primary btn-sm" /> or <a
-								href="<c:url value='/list' />">Cancel</a>
+								href="<c:url value='/list' />">Cancelar</a>
 						</c:otherwise>
 					</c:choose>
 				</div>

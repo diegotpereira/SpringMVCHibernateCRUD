@@ -16,13 +16,13 @@
 <body>
 
 <div class="generic-container">
-		<div class="well lead">Employee Registration Form</div>
+		<div class="well lead">Formulário de Registro de Funcionário</div>
 		<form:form method="POST" modelAttribute="employee" class="form-horizontal">
 			<form:input type="hidden" path="id" id="id" />
 
 			<div class="row">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="name">Name</label>
+					<label class="col-md-3 control-lable" for="name">Nome</label>
 					<div class="col-md-7">
 						<form:input type="text" path="name" id="name"
 							class="form-control input-sm" />
@@ -35,7 +35,7 @@
 
 			<div class="row">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="joining_date">Joining Date</label>
+					<label class="col-md-3 control-lable" for="joining_date">Data de Admissão</label>
 					<div class="col-md-7">
 						<form:input type="text" path="joining_date" id="joining_date"
   							class="form-control input-sm" />
@@ -48,7 +48,7 @@
 			
 			<div class="row">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="salary">Salary</label>
+					<label class="col-md-3 control-lable" for="salary">Salário</label>
 					<div class="col-md-7">
 						<form:input type="text" path="salary" id="salary"
 							class="form-control input-sm" />
@@ -63,7 +63,7 @@
 
 			<div class="row">
 				<div class="form-group col-md-12">
-					<label class="col-md-3 control-lable" for="ssn">ssn</label>
+					<label class="col-md-3 control-lable" for="ssn">Password</label>
 					<div class="col-md-7">
 						<form:input type="password" path="ssn" id="ssn"
 							class="form-control input-sm" />
@@ -84,12 +84,12 @@
 						<c:when test="${edit}">
 							<input type="submit" value="Update"
 								class="btn btn-primary btn-sm" /> or <a
-								href="<c:url value='/list' />">Cancel</a>
+								href="<c:url value='/list' />">Cancelar</a>
 						</c:when>
 						<c:otherwise>
 							<input type="submit" value="Register"
 								class="btn btn-primary btn-sm" /> or <a
-								href="<c:url value='/list' />">Cancel</a>
+								href="<c:url value='/list' />">Cancelar</a>
 						</c:otherwise>
 					</c:choose>
 				</div>
@@ -99,7 +99,7 @@
 		<div class="well">
 			<ul>
 			
-			<li><a href="<c:url value='/employeeslist' />">List employees</a>      </li>
+			<li><a href="<c:url value='/employeeslist' />">Lista de Funcionários</a>      </li>
 			
 			
 			</ul>

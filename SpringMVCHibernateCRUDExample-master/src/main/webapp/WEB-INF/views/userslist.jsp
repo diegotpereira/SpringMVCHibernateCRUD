@@ -16,13 +16,13 @@
 		<div class="panel panel-default">
 			<!-- Default panel contents -->
 			<div class="panel-heading">
-				<span class="lead">List of Users </span>
+				<span class="lead">Lista de Usuários </span>
 			</div>
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>Firstname</th>
-						<th>Lastname</th>
+						<th>Nome</th>
+						<th>Sobrenome</th>
 						<th>Email</th>
 						<th>SSO ID</th>
 						<th width="100"></th>
@@ -39,11 +39,11 @@
 							<td><a href="<c:url value='/edit-user-${user.ssoId}' />"
 								class="btn btn-success 
  
-custom-width">edit</a></td>
+custom-width">editar</a></td>
 							<td><a href="<c:url value='/delete-user-${user.ssoId}' />"
 								class="btn btn-danger 
  
-custom-width">delete</a></td>
+custom-width">deletar</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -52,8 +52,8 @@ custom-width">delete</a></td>
 		<div class="well">
 			<ul>
 			
-			<li><a href="<c:url value='/newuser' />">Add New User</a>      </li>
-			<li><a href="<c:url value='/addemployee' />">Add New Employee</a> </li>
+			<li><a href="<c:url value='/newuser' />">Adicionar novo usuário</a>      </li>
+			<li><a href="<c:url value='/addemployee' />">Adicionar novo funcionário</a> </li>
 			
 			</ul>
 		</div>
