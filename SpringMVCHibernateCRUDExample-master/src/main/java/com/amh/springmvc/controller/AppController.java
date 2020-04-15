@@ -125,17 +125,7 @@ public class AppController {
 			return "registration";
 		}
 
-		/*
-		 * //Uncomment below 'if block' if you WANT TO ALLOW UPDATING SSO_ID in
-		 * UI which is a unique key to a User.
-		 * if(!userService.isUserSSOUnique(user.getId(), user.getSsoId())){
-		 * FieldError ssoError =new
-		 * FieldError("user","ssoId",messageSource.getMessage(
-		 * "non.unique.ssoId", new
-		 * 
-		 * String[]{user.getSsoId()}, Locale.getDefault()));
-		 * result.addError(ssoError); return "registration"; }
-		 */
+	
 
 		userService.updateUser(user);
 
@@ -202,12 +192,21 @@ public class AppController {
 		model.addAttribute("edit", true);
 		return "addemployee";
 	}
+	@RequestMapping(value = { "/edit-employee-{id}" }, method = RequestMethod.POST)
+	public String updateEmployee(@Valid Employee employee, BindingResult result, ModelMap model, @PathVariable Integer id) {
 
-	/**
-	 * This method will be called on form submission, handling POST request for
-	 * updating user in database. It also validates the user input
-	 */
+		if (result.hasErrors()) {
+			return "employeeslist";
+		}
 
+	
+
+		employeeService.updateEmployee(employee);
+
+		model.addAttribute("success",
+				"Employee " + employee.getName() + " " + employee.getJoining_date() + " updated successfully");
+		return "registrationsuccess";
+	}
 	
 	@RequestMapping(value = { "/delete-employee-{id}" }, method = RequestMethod.GET)
 	public String deleteEmployee(@PathVariable Integer id) {
@@ -215,12 +214,6 @@ public class AppController {
 		return "redirect:/list";
 	}
 	
-	@RequestMapping(value = { "/edit-employee-{Id}" }, method = RequestMethod.POST)
-	public String updateEmployee(@Valid Employee employee, BindingResult result, ModelMap model,@PathVariable("id") Integer id) {
-
-		if (result.hasErrors()) {
-			return "addemployee";
-		}
-}
+	
 
 }
